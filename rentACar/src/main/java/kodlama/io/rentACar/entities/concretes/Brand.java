@@ -1,30 +1,23 @@
 package kodlama.io.rentACar.entities.concretes;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import jakarta.persistence.*;
+
+@Table(name="brands")//Table oluşturuyoruz
+@Data //getter-setter oluşturuyor @Getter+@Setter görevi görüyor
+@AllArgsConstructor//tüm argümanlar için ctor oluşturutor
+@NoArgsConstructor //paramatresiz ctor için tanımlıyoruz
+@Entity //Db varlığı olduğunu bilidirir
 public class Brand {
+    @Id //Db de primary key alanı
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //auto-increment yapar
+    @Column(name="id") //Db de karşılığı olan variable
     private int id;
+    @Column(name="name")//Db de karşılığı olan variable
     private String name;
 
-    public Brand() {
-    }
 
-    public Brand(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
