@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Table(name="brands")//Table oluşturuyoruz
 @Data //getter-setter oluşturuyor @Getter+@Setter görevi görüyor
 @AllArgsConstructor//tüm argümanlar için ctor oluşturutor
@@ -16,8 +18,12 @@ public class Brand {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto-increment yapar
     @Column(name="id") //Db de karşılığı olan variable
     private int id;
+
     @Column(name="name")//Db de karşılığı olan variable
     private String name;
+
+    @OneToMany(mappedBy = "brand")
+    private List<Model> models;
 
 
 }

@@ -13,5 +13,5 @@ import java.util.List;
     GetByIdBrandResponse getById(int id);
     void add(CreateBrandRequest createBrandRequest);//yeni bir add işlemi için istek atıyoruz
     void delete(int id);
-    void update(UpdateBrandRequest updateBrandRequest);
+    void update(UpdateBrandRequest updateBrandRequest, int id);
 }

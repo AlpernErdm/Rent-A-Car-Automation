@@ -10,10 +10,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateBrandRequest {
+public class CreateModelRequest {
     @NotNull //Boş geçemez
     @NotBlank //Boşluk ekleyemez
     @Size(min = 2,max = 20)
-    private String name;//Son kullanıcıya id'yi vermemize gerek yok sadece name yeter
-
+    private String name;
+    @NotBlank //Boşluk ekleyemez
+    @Size(min = 2,max = 20)
+    private int brandId ;
 }

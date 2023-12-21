@@ -1,5 +1,6 @@
 package kodlama.io.rentACar.webAPI.controllers;
 
+import jakarta.validation.Valid;
 import kodlama.io.rentACar.business.abstracts.BrandService;
 import kodlama.io.rentACar.business.requests.CreateBrandRequest;
 import kodlama.io.rentACar.business.requests.UpdateBrandRequest;
@@ -27,7 +28,7 @@ public class BrandsController {
     }
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)//201 döndürmesi için
-    public void add(@RequestBody CreateBrandRequest createBrandRequest) {
+    public void add(@RequestBody @Valid() CreateBrandRequest createBrandRequest) {
         this.brandService.add(createBrandRequest);
     }
     @GetMapping("/{id}")
@@ -35,8 +36,8 @@ public class BrandsController {
         return brandService.getById(id);
     }
     @PutMapping("/{id}")
-    public void update(@RequestBody UpdateBrandRequest updateBrandRequest){
-        this.brandService.update(updateBrandRequest);
+    public void update(@RequestBody UpdateBrandRequest updateBrandRequest, @PathVariable int id){
+        this.brandService.update(updateBrandRequest,id);
     }
     @DeleteMapping("/{id}")
     public void delete(@PathVariable int id){
