@@ -2,7 +2,7 @@
 
 Bu proje, Spring Boot kullanarak geliştirilmiş bir Rent A Car uygulamasıdır.
 Müşterilerin araç kiralayabileceği basit bir otomobil kiralama sistemidir.
-Proje, Spring JPA kullanarak PostgreSQL veritabanını yönetir ve aynı zamanda unit testler ile güvenilir bir yapı sunar.
+Proje, Spring JPA kullanarak PostgreSQL veritabanını yönetir.
 
 
 ## Teknolojiler ve Araçlar
