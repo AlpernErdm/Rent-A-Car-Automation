@@ -12,7 +12,7 @@ Proje, Spring JPA kullanarak PostgreSQL veritabanını yönetir.
 - Spring JPA
 - PostgreSQL
 - Maven
-```
+```  
 
 ## Model ve İlişkiler
 
